@@ -16,7 +16,7 @@ Diese Anforderungen sind:
 - Der Name darf nur ASCII-alphanumerische Zeichen oder Unterstriche enthalten.
 - Der Name muss mit einem alphabetischen Zeichen beginnen.
 - Die Länge des Namens muss mehr als 2 Zeichen und weniger als 50 Zeichen betragen.
-- Der Name darf nicht "fetch_time" oder "update_time" sein, oder mit "\_id"
+- Der Name darf nicht mit "_id" oder "_time" enden
 
 ## Project
 
@@ -47,5 +47,5 @@ sollten.
 ---
 
 Mit Project>Site>Page sinnvoll erstellt, kann nun die Annotation und
-Konfiguration der Seite gestartet werden, dazu einfach auf den "Start Annotation"
-Knopf drücken.
+Konfiguration der Seite gestartet werden, dazu einfach auf die gewünschte Seite
+navigieren und den "Start Annotation" Knopf drücken.

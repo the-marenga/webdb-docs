@@ -19,7 +19,7 @@ werden. Dazu:
 
 <img style="width: 50%; display: block; margin: 0 auto;" src="chapter_1_1.png"/>
 
-Dies öffnet die chrome://extensions/ Seite. Dort oben rechts den Entwicklermodus
+Dies öffnet die interne `chrome://extensions/` Seite. Dort oben rechts den Entwicklermodus
 aktivieren, um die Erweiterung laden zu können. Danach nun auf den "Entpackte
 Erweiterung laden"-Knopf oben link klicken und in dem neu geöffneten Fenster
 nun den zuvor entpackten Ordner auswählen.
