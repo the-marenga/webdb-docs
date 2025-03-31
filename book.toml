@@ -1,0 +1,6 @@
+[book]
+authors = ["Alexander Schwochow"]
+language = "de"
+multilingual = false
+src = "src"
+title = "WebDB 3.0"
