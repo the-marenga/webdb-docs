@@ -12,5 +12,6 @@
   - [Xpaths](./chapter_xpaths.md)
 - [Beispiel IMDB](./chapter_imdb.md)
   - [Suche](./chapter_imdb_1.md)
-  - [Film](./chapter_imdb_2.md)
-  - [Many To Many](./chapter_imdb_3.md)
+  - [Film Details](./chapter_imdb_2.md)
+  - [Schauspieler](./chapter_imdb_3.md)
+  - [Schauspieler (Many To Many)](./chapter_imdb_4.md)

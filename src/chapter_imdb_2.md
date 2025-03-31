@@ -1,4 +1,4 @@
-# Die Film-Seite
+# Die Film-Seite (Details)
 
 Mit der Konfigurtion der IMDB-Suche abgeschlossen, können wir nun zur
 Detail-Seite wechseln. Dazu einfach auf einen der Filme klicken.
@@ -59,5 +59,3 @@ uns nach ein paar Sekunden das Resultat in der Datenbank an, sehen wir die neuen
 Felder gefüllt mit Daten
 
 <img style="width: 70%; display: block; margin: 0 auto;" src="imdbok.png"/>
-
-## Lists

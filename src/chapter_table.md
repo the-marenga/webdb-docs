@@ -1,4 +1,4 @@
-# Table Konfiguration
+# Tabellen Konfiguration
 
 Im Table tab, lassen sich die Tabellen der Datenbank konfigurieren.
 
