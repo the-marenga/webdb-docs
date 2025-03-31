@@ -2,7 +2,7 @@
 
 Im Table tab, lassen sich die Tabellen der Datenbank konfigurieren.
 
-## New Table
+## Neue Tabelle
 
 Ein klick auf `New Table` öffnet den Dialog zum Erstellen einer neuen Tabelle.
 
@@ -29,7 +29,7 @@ Erstellung und die Zeit des letzten Updates für jede Zeile.
 
 `Create Table` erstellt die Tabelle
 
-## New Column
+## Neue Spalte
 
 Mit einer vorhandenen Tabelle, zeigt sich eine neue Option, um für jede Tabelle
 neue Spalten hinzuzufügen.

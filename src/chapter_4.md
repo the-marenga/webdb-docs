@@ -11,6 +11,7 @@ Verständnis, empfehle ich diese Reihenfolge:
 - [Table](/chapter_table.html)
 - [Nodes](/chapter_nodes.html)
 - [Annotation](/chapter_annotation.html)
+- [Knowledge](/chapter_knowledge.html)
 - [Page](/chapter_page.html)
 - [XPaths](/chapter_xpaths.html)
 
