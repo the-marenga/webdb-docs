@@ -1,4 +1,4 @@
-# Search Page
+# Die Such-Seite
 
 <img style="width: 80%; display: block; margin: 0 auto;" src="chapter_imdb_1_1.png"/>
 
@@ -12,7 +12,7 @@ Einstellungen:
 
 - **Annotation Name:** `Movie`
 - **Annotation Type:** `Simple List` Da wir mehre Elemente annotieren wollen
-- **Annotation Template:** `Auto Node`Erstellt automatisch eine neue Tabelle & Node mit dem Annotations Namen
+- **Annotation Template:** `Auto Node` Erstellt automatisch eine neue Tabelle & Node mit dem Annotations Namen
 
 Wir klicken auf `Annotate` und wählen nun die Movies so aus, dass sich die
 Annotationen den gesamten Movie umfassen.
@@ -55,9 +55,9 @@ Das ganze sollte nun so ausssehen:
 
 Nun nur noch speichern und diese Seite ist abgeschlossen.
 
-Zum testen, könnnen wir testweise bereits das Crawling starten und uns das
-Ergebnis in der DB Overview anschauen:
+## Test
+
+Zum Testen, könnnen bereits das Crawling starten und uns das
+Ergebnis über die DB Overview anschauen:
 
 <img style="width: 60%; display: block; margin: 0 auto;" src="imdb7.png"/>
-
-Wie erwatet, haben wir die URLs aller Filme.

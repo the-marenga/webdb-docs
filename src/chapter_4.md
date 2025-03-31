@@ -19,5 +19,5 @@ Für eine kurze Quickstart Anleitung zum simplen crawling, sollte ein kurzer
 Überblick zum Annotieren genügen. Danach, kann direkt das Beispiel angeschaut
 werden.
 
-- [Annotation](/chapter_annotation)
-- [Simple Demo](/chapter_example)
+- [Annotation](/chapter_annotation.html)
+- [IMDB Beispiel](/chapter_imdb.html)
