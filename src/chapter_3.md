@@ -13,26 +13,26 @@ erfüllen, um z.B. als Annotation, oder Text in der DB keine Probleme zu machen.
 
 Diese Anforderungen sind:
 
-* Der Name darf nur ASCII-alphanumerische Zeichen oder Unterstriche enthalten.
-* Der Name muss mit einem alphabetischen Zeichen beginnen.
-* Die Länge des Namens muss mehr als 2 Zeichen und weniger als 50 Zeichen betragen.
-* Der Name darf nicht "fetch_time" oder "update_time" sein, oder mit "_id"
+- Der Name darf nur ASCII-alphanumerische Zeichen oder Unterstriche enthalten.
+- Der Name muss mit einem alphabetischen Zeichen beginnen.
+- Die Länge des Namens muss mehr als 2 Zeichen und weniger als 50 Zeichen betragen.
+- Der Name darf nicht "fetch_time" oder "update_time" sein, oder mit "\_id"
 
 ## Project
 
-Ein Projekt bündelt mehrere Webseiten mit einer Datenbank. Es sollte nach dem
-benannt werden *was* man crawlt und nicht wo. Das bedeutet wenn man vorhat
-*IMDB* und *Rottentomatos* zu crawlen, könnte man sie in einem **Movie**,
+Ein Projekt bündelt mehrere Webseiten in einer Datenbank. Es sollte nach dem
+benannt werden _was_ man crawlt und nicht wo. Das bedeutet wenn man vorhat
+_IMDB_ und _Rottentomatos_ zu crawlen, könnte man sie in einem **Movie**,
 oder **Cinema** Projekt bündeln.
 
 ## Site
 
-Diese ist der name der wirklichen Webseite, also z.B. *IMDB*. Der Name ist nicht
+Diese ist der name der wirklichen Webseite, also z.B. _IMDB_. Der Name ist nicht
 gezwungener maßen die Domain einer URL, es macht allerdings die Organisation
 einfacher. Dies ist auch das Level, auf dem man das Crawling startet. Das
-bedeutet man würde nicht ein ganzes Projekt (IMDB, Rottentomatos, etc.) zusammen
-crawlen und auch nicht nur eine Unterseite (Top 250 Movies), sondern
-konfigurieren wie und welche Seiten ein Projekt hat und dann alle Start-Seiten
+bedeutet man würde nicht ein ganzes Projekt (Movies => IMDB & Rottentomatos)
+zusammen crawlen und auch nicht nur eine Unterseite (Top 250 Movies), sondern
+konfigurieren wie und welche Unterseiten eine Webseite hat und dann alle Start-Seiten
 crawlen. Dies ermöglicht es auch "rekursiv" zu crawlen, also Unterseiten zu haben,
 die auf neue Unterseiten zum crawlen verweisen.
 
