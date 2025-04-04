@@ -1,37 +1,21 @@
 # Die Film-Seite (Details)
 
 Mit der Konfigurtion der IMDB-Suche abgeschlossen, können wir nun zur
-Detail-Seite wechseln. Dazu einfach auf einen der Filme klicken.
-
-## Seite Erstellen & Konfigurieren
-```
-NOTE: Diese Schritte werden im nächsten Update nicht mehr erforderlich sein
-```
-Mit `DataType = Link` auf der vorherigen Seite, haben wir
-bereits festgelegt, dass diese Links auf einen Movie verweisen. Wir erstellen
-nun also eine `Movie' page im popup Fenster der Extension (`+` Drücken nicht vergessen).
-
-<img style="width: 50%; display: block; margin: 0 auto;" src="imdb99.png"/>
-
-Zudem müssen wir festlegen, dass diese Seite einen Movie beinhaltet. Dazu
-starten wir die Annotation und wechseln in den Node Tab. Dort bearbeiten wir den
-Root Node und wählen aus, dass dieser zum Movie Table gehört und dass wir unsere
-aktuelle URL dem fetch_url column zuweisen wollen. Das ganze sieht dann so aus:
-
-<img style="width: 60%; display: block; margin: 0 auto;" src="imdba.png"/>
-
-Nicht vergessen die Änderungen zu speichern
+Detail-Seite wechseln. Dazu einfach auf einen der Filme klicken und im
+Erweiterungs Popup-Menü die neue Movie Seite auswählen. Diese wurde erstellt,
+als wir in den Movie node einen Link seleektiert haben.
 
 ## Movie Infos
 
-Da unsere Seite nun auf die Movie Tabelle verweist, können wir einfach simple Punkte
+Da diese Seite bereits auf die Movie Tabelle verweist, können wir einfach simple Punkte
 hinzufügen, die wir extrahieren wollen. Die default Annotations-Konfiguration
 ist dafür bereits korrekt, wir müssen nur einen Namen und ggf. Datentyp festlegen:
 
 - **Annotation Name:** `Title`
-- **Annotation Type:** `Single Element` Da wir nur ein simples Element extrahieren wollen
-- **Annotation Template:** `Auto Point` Erstellt automatisch eine neue Spalte in der Movies Tabelle
-- **Data Type:** `Text`
+- **Annotation Count:** `Single Element` Da wir nur ein simples Element extrahieren wollen
+- **Action:** `Auto Point` Erstellt automatisch eine neue Spalte in der Movies Tabelle
+- **Data Target:** `Table Insert`
+- **Data Target:** `Text`
 
 Danach annotieren wir einfach das gewünschte Element
 
@@ -40,8 +24,9 @@ Danach annotieren wir einfach das gewünschte Element
 Das gleiche können wir für alle weiteren Elemente wiederholen:
 
 - **Annotation Name:** `Description`
-- **Annotation Type:** `Single Element` Da wir nur ein simples Element extrahieren wollen
-- **Annotation Template:** `Auto Point` Erstellt automatisch eine neue Spalte in der Movies Tabelle
+- **Annotation Count:** `Single Element` Da wir nur ein simples Element extrahieren wollen
+- **Action:** `Auto Point` Erstellt automatisch eine neue Spalte in der Movies Tabelle
+- **Data Target:** `Table Insert`
 - **Data Type:** `Text`
 
 <img style="width: 80%; display: block; margin: 0 auto;" src="imdbk.png"/>
