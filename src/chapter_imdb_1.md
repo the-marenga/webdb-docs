@@ -12,7 +12,7 @@ Einstellungen:
 
 - **Annotation Name:** `Movie`
 - **Annotation Count:** `Simple List` Da wir mehre Elemente annotieren wollen
-- **Action:** `Auto Node` Erstellt automatisch eine neue Tabelle & Node mit dem Annotations Namen
+- **Action:** `Create Node` Erstellt automatisch eine neue Tabelle & Node mit dem Annotations Namen
 
 Wir klicken auf `Annotate` und wählen nun die Movies so aus, dass sich die
 Annotationen den gesamten Movie umfassen.
@@ -25,8 +25,8 @@ Um Urls zu extrahieren ist vollgende Konfiguration sinnvoll:
 
 - **Annotation Name:** `MovieLink`
 - **Annotation Count:** `Simple List` Da wir die Links aller Movies wollen
-- **Action:** `Auto Point` Stellt sicher, dass der Link dem Movie zugeordnet wird
-- **Data Type:** `Link` Extrahiert den ersten Link, der im selektierten Element gefunden wird. Erzeugt zudem eine fetch_url Zeile für Movie, markiert diese URL zum Crawlen der Movie Seite und erzeugt eine neue Seite "Movie", die bereits auf die Movie Tabelle konfiguriert ist
+- **Action:** `Create Data Point` Stellt sicher, dass der Link dem Movie zugeordnet wird
+- **Data Target:** `Link` Extrahiert den ersten Link, der im selektierten Element gefunden wird. Erzeugt zudem eine fetch_url Zeile für Movie, markiert diese URL zum Crawlen der Movie Seite und erzeugt eine neue Seite "Movie", die bereits auf die Movie Tabelle konfiguriert ist
 
 
 Eine grobe Auswahl des Bereichs, in dem der Link ist reicht aus

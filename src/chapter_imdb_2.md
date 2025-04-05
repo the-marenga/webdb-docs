@@ -3,7 +3,7 @@
 Mit der Konfigurtion der IMDB-Suche abgeschlossen, können wir nun zur
 Detail-Seite wechseln. Dazu einfach auf einen der Filme klicken und im
 Erweiterungs Popup-Menü die neue Movie Seite auswählen. Diese wurde erstellt,
-als wir in den Movie node einen Link seleektiert haben.
+als wir in den Movie node einen Link selektiert haben.
 
 ## Movie Infos
 
@@ -15,7 +15,7 @@ ist dafür bereits korrekt, wir müssen nur einen Namen und ggf. Datentyp festle
 - **Annotation Count:** `Single Element` Da wir nur ein simples Element extrahieren wollen
 - **Action:** `Auto Point` Erstellt automatisch eine neue Spalte in der Movies Tabelle
 - **Data Target:** `Table Insert`
-- **Data Target:** `Text`
+- **Insertion Type:** `Text`
 
 Danach annotieren wir einfach das gewünschte Element
 
@@ -27,7 +27,7 @@ Das gleiche können wir für alle weiteren Elemente wiederholen:
 - **Annotation Count:** `Single Element` Da wir nur ein simples Element extrahieren wollen
 - **Action:** `Auto Point` Erstellt automatisch eine neue Spalte in der Movies Tabelle
 - **Data Target:** `Table Insert`
-- **Data Type:** `Text`
+- **Insertion Type:** `Text`
 
 <img style="width: 80%; display: block; margin: 0 auto;" src="imdbk.png"/>
 
