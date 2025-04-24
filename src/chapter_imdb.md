@@ -1,4 +1,4 @@
-# Beispiel IMDB
+# Beispiel IMDB (Automatic)
 
 Im folgenden werden wir die besten Filme von IMDB crawlen. Die URL dazu ist
 

@@ -19,9 +19,9 @@ Annotationen den gesamten Movie umfassen.
 
 <img style="width: 80%; display: block; margin: 0 auto;" src="imdb3.png"/>
 
-## Urls extrahieren
+## URLs extrahieren
 
-Um Urls zu extrahieren ist vollgende Konfiguration sinnvoll:
+Um URLs zu extrahieren ist vollgende Konfiguration sinnvoll:
 
 - **Annotation Name:** `MovieLink`
 - **Annotation Count:** `Simple List` Da wir die Links aller Movies wollen

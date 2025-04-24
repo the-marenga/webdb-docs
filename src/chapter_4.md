@@ -20,4 +20,4 @@ Für eine kurze Quickstart Anleitung zum simplen crawling, sollte ein kurzer
 werden.
 
 - [Annotation](/chapter_annotation.html)
-- [IMDB Beispiel](/chapter_imdb.html)
+- [IMDB Beispiel (Automatisch)](/chapter_imdb.html)

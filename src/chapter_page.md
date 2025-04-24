@@ -87,4 +87,4 @@ Die folgenden Interaktionen sind gegeben:
 Ein Klick auf das `+` fügt die Interaktion hinzu. Bestehende Interaktionen
 lassen sich mit `X` entfernen
 
-Zum schluss muss der aktuelle Stand mit `Save` gespeichert werden.
+Zum Schluss muss der aktuelle Stand mit `Save` gespeichert werden.

@@ -43,12 +43,11 @@ Die drei Optionen sind:
 
 Ein Klick auf `Add` fügt die Spalte der Tabelle hinzu
 
-## Edit Table/Column
+## Table/Column Enternen
 
-```
-TODO:
-```
-
+Tabellen und Spalten können natürlich auch wieder entfernt werden. Dazu
+einfach auf das rote "X" neben der Spalte, oder dem Table Eintrag klicken. Dies
+entfernt natürlich auch alle bereits gecrawlten Werte.
 
 ## Indexes
 
