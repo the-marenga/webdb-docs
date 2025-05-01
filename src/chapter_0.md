@@ -1,6 +1,6 @@
 # Konzept
 
-Um das hier genutzte Crawling zu verstehen, muss man sich zunächst überlegen, wie
+Um das hier genutzte System zu verstehen, muss man sich zunächst überlegen, wie
 man naiv Daten aus Webseiten extrahieren könnte. Nehmen wir als Beispiel eine
 einfache Webseite, die nur Daten zu einem Film enthällt.
 
@@ -182,7 +182,7 @@ immer ganz Oben anfangen müssen und uns nach unten vorarbeiten müssen, um
 sicher zu sein, dass der Node zu dem man relativ ist bereits ausgewertet wurde.
 
 Wer mit Baumdiagrammen und der Unterscheidung zwischen Leafs und Nodes vertraut
-ist, dem fällt ebenfalls auf, dass unsere Nodes ebenfalls hier die Nodes
+ist, dem fällt auf, dass unsere Nodes auch im Baumdiagramm die Nodes
 sind. Die Leafs, oder auf deutsch Blätter in diesem Diagramm sind die
 wirklichen Daten, die wir Extrahieren. Um zwischen diesen beiden Arten zu
 Unterscheiden, nennen wir die Blätter nun "Data Points", da nur diese wirklich
@@ -323,37 +323,46 @@ sein). Es bietet allerdings auch viele Möglichkeiten Prozesse zu vereinfachen.
 
 Um Xpaths zu generieren müssen wir die HTML Seite ohnehin annotieren und diesen
 Annotationen sinnvolle namen geben. Was also, wenn wir den Prozess ähnlich
-durchgehen, wie die Extraktion. Wir nennen unsere annotation movie und wählen
-einfach mit einem Klick die ganze Seite aus.
+durchgehen, wie die Extraktion, also von oben nach unten. Wir nennen unsere
+annotation movie und wählen einfach mit einem Klick die ganze Seite aus.
 ```html
   <body webdb='Movie'>
   ...
 ```
-Sofern wir ein enges Annotation=>Node=>Table mapping haben, können wir ohne
+Sofern wir voneinem engen Annotation=>Node=>Table mapping ausgehen, können wir ohne
 weiters zu tun bereits den erforderlichen Node und die Tabelle erstellen.
 
 Das gleiche wiederholen wir mit dem Actor.
 ```html
 <body webdb='Movie'>
 ...
-    <div class="actor">
+    <div class="actor" webdb="actor">
         ...
     </div>
 ...
-    <div class="actor">
+    <div class="actor" webdb="actor">
         ...
     </div>
 ...
 ```
 
-Da dieser nun innerhalb des HTML nodes des
-Movies ist wissen wir, dass auch der Actor node unterhalb des Movie nodes sein muss.
+Da dieser nun innerhalb des HTML nodes des Movies ist wissen wir, dass auch der
+Actor node unterhalb des Movie nodes sein muss.
 Damit kenenn wir auch die Tabellen Relationen und können eine MtM Tabelle erstellen.
 
 Markieren wir nun die Punkte, müssen wir lediglich angeben, ob diese in die
 jeweilige MtM, oder die normale tabelle geschrieben werden müssen. Die
 assoziation zu points lässt sich daraus ableiten was der erste annotierte HTML
 Knoten ist, der darüber liegt.
+
+```html
+<div class="actor" webdb="actor">  <<<<<<<<<<<<<<<<<<<<+ name muss zu actor gehören
+  <a href="https://filminfos.de/actor/a32342">Link</a> |
+  <h2 webdb="name">Tom Cruise</h2>  >>>>>>>>>>>>>>>>>>>+
+  <h3>Ethan Hunt</h3>
+</div>
+```
+
 Mit diesem Verfahren lassen sich Punkte und zugehörige Tabellen Spalten nach
 kurzer Annotation der Nodes also eigens durch einen Namen und das Klicken auf
 das Element definieren.
