@@ -148,7 +148,7 @@ extrahieren.
 
 Natürlich ist dies nur ein minimal-Beispiel, doch in der Praxis sind Nodes oft
 wirklich nicht viel größer, als hier gezeigt. Da wir nur noch einen Bruchteil
-der Seite betrachten, wird sowohl Xpath generierung, als auch Extrahierung und
+der Seite betrachten, wird sowohl die Xpath Generierung, als auch die Extrahierung und
 Zuordnung trivial. Alle Daten, die wir extrahieren gehören immer genau zu dem
 Node, zu dem sie relativ ausgewertet wurden.
 
@@ -185,7 +185,8 @@ Wer mit Baumdiagrammen und der Unterscheidung zwischen Leafs und Nodes vertraut
 ist, dem fällt ebenfalls auf, dass unsere Nodes ebenfalls hier die Nodes
 sind. Die Leafs, oder auf deutsch Blätter in diesem Diagramm sind die
 wirklichen Daten, die wir Extrahieren. Um zwischen diesen beiden Arten zu
-Unterscheiden, nennen wir die Blätter nun "Data Points".
+Unterscheiden, nennen wir die Blätter nun "Data Points", da nur diese wirklich
+Daten extrahieren.
 
 Wenn wir diese Methode nutzen, um die Daten zu extrahieren, erhalten wir
 folgende Daten:
@@ -256,38 +257,34 @@ Dieser Prozess besteht immer grob aus folgenden Schritten:
 2. Wenn unser node eine assoziierte Tabelle hat
     - Finde oder füge eine neue Zeile in die Tabelle ein, die dem einem einmaligen Mapping entspricht
       - Dieses einmalige Mapping besteht aus extrahierten Punkte, und/oder die oder der aktuelle URL zu Spalten in der DB
-      - Dieses Mappings nennen wir **Idents**, da wir in der Praxis unique contraints haben
+      - Dieses Mappings nennen wir **Idents**
 3. Wenn unser node eine assoziierte Many To Many Tabelle hat
     - Finde oder füge eine neue Zeile in die Many To Many Tabelle ein
-      - Nutze dafür die zuvor gefundene zeile unserer tabelle und die id unseres parent nodes
+      - Nutze dafür die zuvor gefundene Zeile unserer Tabelle und die id unseres parent Nodes
 4. Gehe alle unsere points durch und füge diese entweder in unsere, oder die Many To Many Tabelle ein
 5. Für alle Nodes, die direkt unter unserem node sind, beginne erneut bei Schritt 2
 
-Gehen wir die Schritte für unsere zuvor extrahierten Daten
+Da wir als input natürlich kein Diagramm haben, nehmen wir eine Konfiguration
+wie diese, die praktisch das selbe wie das Diagramm oben über Nodes & Points aussagt:
 
-```json
-{
-  "Movie": [
-    {
-      "Title": "Mission Impossible",
-      "Actor": [
-        {
-          "Name": "Tom Cruise",
-          "Role": "Ethan Hunt",
-          "Url": "https://filminfos.de/actor/a32342"
-        },
-        {
-          "Name": "Jon Voight",
-          "Role": "Jim Phelps",
-          "Url": "https://filminfos.de/actor/a714241"
-        }
-      ]
-    }
-  ]
-}
+```yaml
+Movie:
+  table: Movie
+  idents:
+    - url: CURRENT_PAGE_URL
+  points:
+    - title: "insert node table"
+  children_nodes:
+    Actor:
+      table: Actor
+      mtm_table: Actor2Movie
+      idents:
+        - url: point-url
+      points:
+        - url: "handled in idents"
+        - name: "insert node table"
+        - role: "insert node mtm table"
 ```
-
-einmal als Beispiel durch:
 
 ```
 1. Beginne beim Movie Node
@@ -304,8 +301,8 @@ einmal als Beispiel durch:
   3. Wir haben eine many2many tabelle. Wir haben actor_id = 1, movie_id = 1
      Keine Zeile mit den Werten in der Datenbank gefunden
      Füge neue Spalte ein => actor_to_movie_id = 1
-  4. Füge Name in die name spalte ein
-     Füge Role in die role spalte der mtm ein
+  4. Füge Name in die name Spalte ein
+     Füge Role in die role Spalte der mtm ein
   <===
   ===>
   2. Ident definiert dass unser url point zur url Spalte in der DB gehört
@@ -314,25 +311,10 @@ einmal als Beispiel durch:
   3. Wir haben eine many2many tabelle. Wir haben actor_id = 2, movie_id = 1
      Keine Zeile mit den Werten in der Datenbank gefunden
      Füge neue Spalte ein => actor_to_movie_id = 2
-  4. Füge Name in die name spalte ein
-     Füge Role in die role spalte der mtm ein
+  4. Füge Name in die name Spalte ein
+     Füge Role in die role Spalte der mtm ein
   <===
 ```
-
-In der Praxis wollen wir ggf. etwas von dem standard Verfahren abweichen. Die
-Konfiguration von Points und nodes ist daher etwas komplexer, da wir zum
-Beispiel unterschiedliche Namen für points & Spalten nutzen und daher dieses
-Mapping ebenfalls manuell festlegen müssen. Zudem wollen wir vlt. auch nicht
-unbedingt überall `UNIQUE` constraints in der Datenbank haben. Stattdessen
-definieren wir manuell so genannte Idents, die das genaue erforderliche Mapping
-von Points/Url zu Table Columns definieren.
-
-All das und noch viel mehr lässt sich manuell Konfigurieren. Das Grundprinzip
-ist aber einfach:
-
-- Zeilen in den Tabellen finden
-- Daten einfügen
-- Mit Nodes unterhalb weitermachen
 
 ## Automatisierung
 
@@ -372,7 +354,7 @@ Markieren wir nun die Punkte, müssen wir lediglich angeben, ob diese in die
 jeweilige MtM, oder die normale tabelle geschrieben werden müssen. Die
 assoziation zu points lässt sich daraus ableiten was der erste annotierte HTML
 Knoten ist, der darüber liegt.
-Mit diesem Verfahren lassen sich Punkte und zugehörige Tabellen spalten nach
+Mit diesem Verfahren lassen sich Punkte und zugehörige Tabellen Spalten nach
 kurzer Annotation der Nodes also eigens durch einen Namen und das Klicken auf
 das Element definieren.
 
